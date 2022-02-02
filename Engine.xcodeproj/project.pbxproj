@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		90725D3627AAF508001382CE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90725D3527AAF508001382CE /* main.cpp */; };
+		90725D4727AAF83A001382CE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 90725D4627AAF83A001382CE /* glad.c */; };
+		90725D4927AAF8CE001382CE /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90725D4827AAF8CE001382CE /* libglfw3.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		90725D6027AAF980001382CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90725D5F27AAF980001382CE /* Cocoa.framework */; };
+		90725D6227AAF98E001382CE /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90725D6127AAF98E001382CE /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		90725D3227AAF508001382CE /* Engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Engine; sourceTree = BUILT_PRODUCTS_DIR; };
 		90725D3527AAF508001382CE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		90725D4027AAF7D6001382CE /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		90725D4127AAF7D6001382CE /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		90725D4327AAF7EB001382CE /* glad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
+		90725D4527AAF7EB001382CE /* khrplatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
+		90725D4627AAF83A001382CE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		90725D4827AAF8CE001382CE /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		90725D5F27AAF980001382CE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		90725D6127AAF98E001382CE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90725D6027AAF980001382CE /* Cocoa.framework in Frameworks */,
+				90725D4927AAF8CE001382CE /* libglfw3.a in Frameworks */,
+				90725D6227AAF98E001382CE /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +56,10 @@
 		90725D2927AAF508001382CE = {
 			isa = PBXGroup;
 			children = (
+				90725D3C27AAF78D001382CE /* External */,
 				90725D3427AAF508001382CE /* Engine */,
 				90725D3327AAF508001382CE /* Products */,
+				90725D5E27AAF980001382CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +77,68 @@
 				90725D3527AAF508001382CE /* main.cpp */,
 			);
 			path = Engine;
+			sourceTree = "<group>";
+		};
+		90725D3C27AAF78D001382CE /* External */ = {
+			isa = PBXGroup;
+			children = (
+				90725D3E27AAF7BC001382CE /* libs */,
+				90725D3D27AAF7B2001382CE /* include */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		90725D3D27AAF7B2001382CE /* include */ = {
+			isa = PBXGroup;
+			children = (
+				90725D4227AAF7EB001382CE /* glad */,
+				90725D4427AAF7EB001382CE /* KHR */,
+				90725D3F27AAF7D6001382CE /* GLFW */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		90725D3E27AAF7BC001382CE /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				90725D4827AAF8CE001382CE /* libglfw3.a */,
+				90725D4627AAF83A001382CE /* glad.c */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		90725D3F27AAF7D6001382CE /* GLFW */ = {
+			isa = PBXGroup;
+			children = (
+				90725D4027AAF7D6001382CE /* glfw3.h */,
+				90725D4127AAF7D6001382CE /* glfw3native.h */,
+			);
+			path = GLFW;
+			sourceTree = "<group>";
+		};
+		90725D4227AAF7EB001382CE /* glad */ = {
+			isa = PBXGroup;
+			children = (
+				90725D4327AAF7EB001382CE /* glad.h */,
+			);
+			path = glad;
+			sourceTree = "<group>";
+		};
+		90725D4427AAF7EB001382CE /* KHR */ = {
+			isa = PBXGroup;
+			children = (
+				90725D4527AAF7EB001382CE /* khrplatform.h */,
+			);
+			path = KHR;
+			sourceTree = "<group>";
+		};
+		90725D5E27AAF980001382CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90725D6127AAF98E001382CE /* IOKit.framework */,
+				90725D5F27AAF980001382CE /* Cocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90725D3627AAF508001382CE /* main.cpp in Sources */,
+				90725D4727AAF83A001382CE /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +323,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NBLTG86CSU;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External/include";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/External/libs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +335,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NBLTG86CSU;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External/include";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/External/libs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
