@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		90344E1627B00FF7002392DA /* Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
 		90344E1727B00FF7002392DA /* Renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
+		90344E1A27B058F5002392DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9037466527AEA0B4000803AA /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		9037466627AEA0B4000803AA /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		9069F06A27AF315E003E7D98 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		90725D2927AAF508001382CE = {
 			isa = PBXGroup;
 			children = (
+				90344E1A27B058F5002392DA /* README.md */,
 				9069F06927AF30C6003E7D98 /* Shaders */,
 				90725D3C27AAF78D001382CE /* External */,
 				90725D3427AAF508001382CE /* Engine */,
