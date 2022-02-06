@@ -3,10 +3,19 @@
 //  Engine
 //
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
 #include <iostream>
+#include "Shader.hpp"
+#include "Window.hpp"
+#include "Debug.hpp"
+#include "Renderer.hpp"
 
-int main(int argc, const char * argv[]) {
+int main() {
+    Debug::init();
+    
+    Window window;
+    window.init();
+    
+    Renderer renderer;
+    renderer.init();
     
 }

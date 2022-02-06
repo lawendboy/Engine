@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90344E1827B00FF7002392DA /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90344E1627B00FF7002392DA /* Renderer.cpp */; };
+		9037466727AEA0B4000803AA /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9037466527AEA0B4000803AA /* Shader.cpp */; };
 		90725D3627AAF508001382CE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90725D3527AAF508001382CE /* main.cpp */; };
 		90725D4727AAF83A001382CE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 90725D4627AAF83A001382CE /* glad.c */; };
 		90725D4927AAF8CE001382CE /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90725D4827AAF8CE001382CE /* libglfw3.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		90725D6027AAF980001382CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90725D5F27AAF980001382CE /* Cocoa.framework */; };
 		90725D6227AAF98E001382CE /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90725D6127AAF98E001382CE /* IOKit.framework */; };
+		90A0122127AC097100F98A96 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90A0121F27AC097100F98A96 /* Window.cpp */; };
+		90A0122727AC5AC800F98A96 /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90A0122527AC5AC800F98A96 /* Debug.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +31,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90344E1627B00FF7002392DA /* Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
+		90344E1727B00FF7002392DA /* Renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
+		9037466527AEA0B4000803AA /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		9037466627AEA0B4000803AA /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		9069F06A27AF315E003E7D98 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		9069F06B27AF31D3003E7D98 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
+		9069F06C27AF33D6003E7D98 /* coreGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coreGL.h; sourceTree = "<group>"; };
 		90725D3227AAF508001382CE /* Engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Engine; sourceTree = BUILT_PRODUCTS_DIR; };
 		90725D3527AAF508001382CE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		90725D4027AAF7D6001382CE /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
@@ -37,6 +48,10 @@
 		90725D4827AAF8CE001382CE /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		90725D5F27AAF980001382CE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		90725D6127AAF98E001382CE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90A0121F27AC097100F98A96 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		90A0122027AC097100F98A96 /* Window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		90A0122527AC5AC800F98A96 /* Debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Debug.cpp; sourceTree = "<group>"; };
+		90A0122627AC5AC800F98A96 /* Debug.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Debug.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9069F06927AF30C6003E7D98 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				9069F06B27AF31D3003E7D98 /* fragment.glsl */,
+				9069F06A27AF315E003E7D98 /* vertex.glsl */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		90725D2927AAF508001382CE = {
 			isa = PBXGroup;
 			children = (
+				9069F06927AF30C6003E7D98 /* Shaders */,
 				90725D3C27AAF78D001382CE /* External */,
 				90725D3427AAF508001382CE /* Engine */,
 				90725D3327AAF508001382CE /* Products */,
@@ -75,6 +100,15 @@
 			isa = PBXGroup;
 			children = (
 				90725D3527AAF508001382CE /* main.cpp */,
+				90A0121F27AC097100F98A96 /* Window.cpp */,
+				90A0122027AC097100F98A96 /* Window.hpp */,
+				90A0122527AC5AC800F98A96 /* Debug.cpp */,
+				90A0122627AC5AC800F98A96 /* Debug.hpp */,
+				9037466527AEA0B4000803AA /* Shader.cpp */,
+				9037466627AEA0B4000803AA /* Shader.hpp */,
+				90344E1627B00FF7002392DA /* Renderer.cpp */,
+				90344E1727B00FF7002392DA /* Renderer.hpp */,
+				9069F06C27AF33D6003E7D98 /* coreGL.h */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -198,8 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90344E1827B00FF7002392DA /* Renderer.cpp in Sources */,
 				90725D3627AAF508001382CE /* main.cpp in Sources */,
+				90A0122727AC5AC800F98A96 /* Debug.cpp in Sources */,
+				90A0122127AC097100F98A96 /* Window.cpp in Sources */,
 				90725D4727AAF83A001382CE /* glad.c in Sources */,
+				9037466727AEA0B4000803AA /* Shader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +361,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NBLTG86CSU;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External/include";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/External/include",
+					"$(PROJECT_DIR)/Engine",
+				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/External/libs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -335,7 +377,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NBLTG86CSU;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/External/include";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/External/include",
+					"$(PROJECT_DIR)/Engine",
+				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/External/libs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
