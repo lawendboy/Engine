@@ -5,7 +5,10 @@
 
 #include "Window.hpp"
 #include "Debug.hpp"
-
+#include "Texture.hpp"
+#include "ObjectLoader.hpp"
+#include "Mesh.hpp"
+#include "Shader.hpp"
 void frameBufferSizeCallback(GLFWwindow* window, int width, int height){
 }
 
@@ -29,10 +32,30 @@ void Window::init() {
     glfwMakeContextCurrent(window);
     
     Debug::glInit();
-    
+    glEnable(GL_DEPTH_TEST);
 #ifdef __APPLE__
     glViewport(0, 0, Window::WIDTH * 2, Window::HEIGHT * 2);
 #else
     glViewport(0, 0, Window::WIDTH, Window::HEIGHT);
 #endif
+}
+
+glm::mat4 Window::getProjectionMatrix(){
+    return glm::perspective(glm::radians((float) Window::FOV), (float) Window::WIDTH / (float) Window::HEIGHT, 0.1f, 1000.0f);
+}
+
+bool Window::getWindowShouldClose(){
+    return glfwWindowShouldClose(Window::window);
+}
+
+bool Window::getKey(uint32_t key){
+    return glfwGetKey(Window::window, key);
+}
+
+void Window::setWindowClose(){
+    glfwSetWindowShouldClose(Window::window, GLFW_TRUE);
+}
+
+void Window::swapBuffers(){
+    glfwSwapBuffers(Window::window);
 }

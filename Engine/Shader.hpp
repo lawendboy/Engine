@@ -16,6 +16,7 @@ private:
 public:
     void create(std::string vertexPath, std::string fragmentPath);
     void use();
+    void setMat4f(char name[], glm::mat4 mat);
 };
 
 #endif /* Shader_hpp */
