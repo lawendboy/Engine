@@ -9,7 +9,9 @@
 #include "ObjectLoader.hpp"
 #include "Mesh.hpp"
 #include "Shader.hpp"
+
 void frameBufferSizeCallback(GLFWwindow* window, int width, int height){
+    glViewport(0, 0, width, height);
 }
 
 void Window::init() {

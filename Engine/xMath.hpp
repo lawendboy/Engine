@@ -7,8 +7,6 @@
 #define xMath_hpp
 
 #include <iostream>
-#include "Mat4.hpp"
-#include "Vector3.hpp"
 
 class xMath {
 public:
