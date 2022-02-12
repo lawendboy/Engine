@@ -460,6 +460,8 @@
 		9040613227B1AD08001BC87D /* rotate_normalized_axis.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rotate_normalized_axis.hpp; sourceTree = "<group>"; };
 		9040613327B1AD08001BC87D /* projection.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = projection.inl; sourceTree = "<group>"; };
 		9040613427B1AD08001BC87D /* type_aligned.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = type_aligned.hpp; sourceTree = "<group>"; };
+		9045201627B862770059D568 /* plane.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = plane.obj; sourceTree = "<group>"; };
+		9045201727B8632B0059D568 /* block.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = block.jpg; sourceTree = "<group>"; };
 		90695E9B27B2D53F00B35E83 /* libPPVA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPPVA.a; path = "../../../../Library/Developer/Xcode/DerivedData/Engine-ekfaibtduncikzftuosfcqrkbnoc/Build/Products/Debug/libPPVA.a"; sourceTree = "<group>"; };
 		9069F06A27AF315E003E7D98 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
 		9069F06B27AF31D3003E7D98 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 		90405F8827B15B16001BC87D /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				9045201727B8632B0059D568 /* block.jpg */,
 				90405F8927B15B37001BC87D /* test.jpeg */,
 			);
 			path = Textures;
@@ -517,6 +520,7 @@
 		90405F8A27B1A7C0001BC87D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9045201627B862770059D568 /* plane.obj */,
 				90C6593327B42FCA00C027FA /* sus.obj */,
 				909DC93327B29AA2005BEE7F /* untitled.obj */,
 			);
