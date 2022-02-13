@@ -492,6 +492,9 @@
 		90E997F127B6C84300D3693E /* Material.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Material.hpp; sourceTree = "<group>"; };
 		90E997F227B6D21B00D3693E /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		90E997F327B6D21B00D3693E /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		90E9F6BE27B98687000B4817 /* PointLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PointLight.hpp; sourceTree = "<group>"; };
+		90E9F6BF27B9936C000B4817 /* DirectionalLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DirectionalLight.hpp; sourceTree = "<group>"; };
+		90E9F6C027B9A0DB000B4817 /* SpotLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpotLight.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1048,6 +1051,9 @@
 				90E997F127B6C84300D3693E /* Material.hpp */,
 				90E997F227B6D21B00D3693E /* Camera.cpp */,
 				90E997F327B6D21B00D3693E /* Camera.hpp */,
+				90E9F6BE27B98687000B4817 /* PointLight.hpp */,
+				90E9F6BF27B9936C000B4817 /* DirectionalLight.hpp */,
+				90E9F6C027B9A0DB000B4817 /* SpotLight.hpp */,
 			);
 			path = Engine;
 			sourceTree = "<group>";

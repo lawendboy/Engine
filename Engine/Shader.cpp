@@ -80,3 +80,52 @@ void Shader::use() {
 void Shader::setMat4f(std::string name, glm::mat4 mat){
     glUniformMatrix4fv(glGetUniformLocation(Shader::shaderProgram, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
 }
+
+void Shader::setMaterial(Material &material){
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "material.ambient"), 1, &material.ambient[0]);
+//    glUniform3fv(-1, 1, &material.ambient[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "material.diffuse"), 1, &material.diffuse[0]);
+//    glUniform3fv(-1, 1, &material.diffuse[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "material.specular"), 1, &material.specular[0]);
+//    glUniform3fv(-1, 1, &material.specular[0]);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "material.shininess"), material.shininess);
+//    glUniform1f(-1, material.shininess);
+    glBindTexture(GL_TEXTURE_2D, material.texture.id);
+}
+
+void Shader::setVector3(std::string name, Vector3 &vec){
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, name.c_str()), 1, &vec[0]);
+}
+
+void Shader::setPointLight(PointLight &light){
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "pointLight.position"), 1, &light.position[0]);
+    
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "pointLight.constant"), light.constant);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "pointLight.linear"), light.linear);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "pointLight.quadratic"), light.quadratic);
+    
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "pointLight.ambient"), 1, &light.ambient[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "pointLight.diffuse"), 1, &light.diffuse[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "pointLight.specular"), 1, &light.specular[0]);
+}
+
+void Shader::setDirectionalLight(DirectionalLight &dirLight){
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "dirLight.direction"), 1, &dirLight.direction[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "dirLight.ambient"), 1, &dirLight.ambient[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "dirLight.diffuse"), 1, &dirLight.diffuse[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "dirLight.specular"), 1, &dirLight.specular[0]);
+}
+
+void Shader::setSpotLight(SpotLight &spotLight){
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "spotLight.position"), 1, &spotLight.position[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "spotLight.direction"), 1, &spotLight.direction[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "spotLight.ambient"), 1, &spotLight.ambient[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "spotLight.diffuse"), 1, &spotLight.diffuse[0]);
+    glUniform3fv(glGetUniformLocation(Shader::shaderProgram, "spotLight.specular"), 1, &spotLight.specular[0]);
+    
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "spotLight.constant"), spotLight.constant);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "spotLight.linear"), spotLight.linear);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "spotLight.quadratic"), spotLight.quadratic);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "spotLight.cutOff"), spotLight.cutOff);
+    glUniform1f(glGetUniformLocation(Shader::shaderProgram, "spotLight.outerCutOff"), spotLight.outerCutOff);
+}

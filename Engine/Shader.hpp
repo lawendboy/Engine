@@ -3,6 +3,11 @@
 //  Engine
 //
 
+#include "Material.hpp"
+#include "PointLight.hpp"
+#include "DirectionalLight.hpp"
+#include "SpotLight.hpp"
+
 #ifndef Shader_hpp
 #define Shader_hpp
 
@@ -17,6 +22,11 @@ public:
     void create(std::string vertexPath, std::string fragmentPath);
     void use();
     void setMat4f(std::string name, glm::mat4 mat);
+    void setMaterial(Material &material);
+    void setPointLight(PointLight &light);
+    void setVector3(std::string name, Vector3 &vec);
+    void setDirectionalLight(DirectionalLight &dirLight);
+    void setSpotLight(SpotLight &spotLight);
 };
 
 #endif /* Shader_hpp */
