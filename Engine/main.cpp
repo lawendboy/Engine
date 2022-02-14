@@ -16,8 +16,6 @@
 #include "Camera.hpp"
 #include "Material.hpp"
 
-#include "DirectionalLight.hpp"
-
 int main() {
     
     Camera camera;
@@ -32,7 +30,7 @@ int main() {
     Mesh plane = ObjectLoader::loadMesh("/Users/ /Desktop/Engine/Models/plane.obj");
     
     Texture txt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/test.jpeg");
-    Texture planeTxt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/block.jpg");
+    Texture planeTxt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/wood.jpg");
     
     Shader shader;
     shader.create("/Users/ /Desktop/Engine/Shaders/vertex.glsl", "/Users/ /Desktop/Engine/Shaders/fragment.glsl");
@@ -82,6 +80,8 @@ int main() {
     directionalLight.specular = Vector3(1.0f, 0.5f, 1.0f);
     
     shader.setDirectionalLight(directionalLight);
+    
+    window.setMultisampling(4);
     
     while(!window.getWindowShouldClose()){
         if(window.getKey(GLFW_KEY_ESCAPE))

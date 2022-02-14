@@ -61,3 +61,11 @@ void Window::setWindowClose(){
 void Window::swapBuffers(){
     glfwSwapBuffers(Window::window);
 }
+
+void Window::setMultisampling(uint32_t samples){
+    glfwWindowHint(GLFW_SAMPLES, samples);
+    if(samples == 1)
+        glDisable(GL_MULTISAMPLE);
+    else
+        glEnable(GL_MULTISAMPLE);
+}

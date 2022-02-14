@@ -460,7 +460,6 @@
 		9040613227B1AD08001BC87D /* rotate_normalized_axis.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rotate_normalized_axis.hpp; sourceTree = "<group>"; };
 		9040613327B1AD08001BC87D /* projection.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = projection.inl; sourceTree = "<group>"; };
 		9040613427B1AD08001BC87D /* type_aligned.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = type_aligned.hpp; sourceTree = "<group>"; };
-		9045201627B862770059D568 /* plane.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = plane.obj; sourceTree = "<group>"; };
 		9045201727B8632B0059D568 /* block.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = block.jpg; sourceTree = "<group>"; };
 		90695E9B27B2D53F00B35E83 /* libPPVA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPPVA.a; path = "../../../../Library/Developer/Xcode/DerivedData/Engine-ekfaibtduncikzftuosfcqrkbnoc/Build/Products/Debug/libPPVA.a"; sourceTree = "<group>"; };
 		9069F06A27AF315E003E7D98 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
@@ -476,6 +475,8 @@
 		90725D4827AAF8CE001382CE /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		90725D5F27AAF980001382CE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		90725D6127AAF98E001382CE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		9092317927BB06110087067F /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
+		9092317B27BB08B40087067F /* plane.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = plane.obj; sourceTree = "<group>"; };
 		9099840C27B55755002E4F5B /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		9099840D27B557BF002E4F5B /* Transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Transform.hpp; sourceTree = "<group>"; };
 		9099840F27B56737002E4F5B /* xMath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xMath.hpp; sourceTree = "<group>"; };
@@ -514,6 +515,7 @@
 		90405F8827B15B16001BC87D /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				9092317927BB06110087067F /* wood.jpg */,
 				9045201727B8632B0059D568 /* block.jpg */,
 				90405F8927B15B37001BC87D /* test.jpeg */,
 			);
@@ -523,7 +525,7 @@
 		90405F8A27B1A7C0001BC87D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9045201627B862770059D568 /* plane.obj */,
+				9092317B27BB08B40087067F /* plane.obj */,
 				90C6593327B42FCA00C027FA /* sus.obj */,
 				909DC93327B29AA2005BEE7F /* untitled.obj */,
 			);

@@ -20,6 +20,7 @@ public:
     bool getKey(uint32_t key);
     void setWindowClose();
     void swapBuffers();
+    void setMultisampling(uint32_t samples);
 private:
     GLFWwindow* window;
     uint16_t WIDTH;
