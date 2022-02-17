@@ -26,20 +26,18 @@ int main() {
     window.FOV = 70;
     window.init();
 
-    Mesh mesh = ObjectLoader::loadMesh("/Users/ /Desktop/Engine/Models/sus.obj");
-    Mesh plane = ObjectLoader::loadMesh("/Users/ /Desktop/Engine/Models/plane.obj");
+    Mesh plane = ObjectLoader::loadMesh("/Users/Michal/Desktop/Engine/Models/plane.obj");
+    Mesh cube = ObjectLoader::loadMesh("/Users/Michal/Desktop/Engine/Models/untitled.obj");
     
-    Texture txt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/test.jpeg");
-    Texture planeTxt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/wood.jpg");
+    Texture txt = TextureManager::createTexture("/Users/Michal/Desktop/Engine/Textures/test.jpeg", true);
+    Texture planeTxt = TextureManager::createTexture("/Users/Michal/Desktop/Engine/Textures/wood.jpg", true);
     
     Shader shader;
-    shader.create("/Users/ /Desktop/Engine/Shaders/vertex.glsl", "/Users/ /Desktop/Engine/Shaders/fragment.glsl");
+    shader.create("/Users/Michal/Desktop/Engine/Shaders/vertex.glsl", "/Users/Michal/Desktop/Engine/Shaders/fragment.glsl");
     
     shader.use();
     
     glm::mat4 projection = window.getProjectionMatrix();
-    
-    glm::mat4 model(1.0f);
     
     shader.setMat4f("projection", projection);
     
@@ -48,40 +46,17 @@ int main() {
     
     camera.transform.position.y = 5;
     
-    Material material;
-    material.ambient = Vector3(1.0f, 1.0f, 1.0f);
-    material.diffuse = Vector3(1.0f, 1.0f, 1.0f);
-    material.specular = Vector3(0.5f, 0.5f, 0.5f);
-    material.shininess = 50.0f;
-    material.texture = txt;
-    
-    Material planeMaterial;
-    planeMaterial.ambient = Vector3(1.0f, 1.0f, 1.0f);
-    planeMaterial.diffuse = Vector3(1.0f, 1.0f, 1.0f);
-    planeMaterial.specular = Vector3(0.5f, 0.5f, 0.5f);
-    planeMaterial.shininess = 50.0f;
-    planeMaterial.texture = planeTxt;
-    
-    PointLight pointLight;
-    pointLight.position = Vector3(0.0f, 60.0f, -10.0f);
-    pointLight.ambient = Vector3(1.0f, 1.0f, 1.0f);
-    pointLight.diffuse = Vector3(1.0f, 1.0f, 1.0f);
-    pointLight.specular = Vector3(1.0f, 1.0f, 1.0f);
-    pointLight.constant = 0.05f;
-    pointLight.linear = 0.01f;
-    pointLight.quadratic = 0.001f;
-    
-    shader.setPointLight(pointLight);
-    
-    DirectionalLight directionalLight;
-    directionalLight.direction = Vector3(-0.2f, -1.0f, -0.3f);
-    directionalLight.ambient = Vector3(0.15f, 0.15f, 0.15f);
-    directionalLight.diffuse = Vector3(0.7f, 0.7f, 0.7f);
-    directionalLight.specular = Vector3(1.0f, 0.5f, 1.0f);
-    
-    shader.setDirectionalLight(directionalLight);
-    
     window.setMultisampling(4);
+    
+    Vector3 lightPos1(-10.0f, 10.0f, 10.0f);
+    Vector3 lightPos2(-10.0f, 10.0f, -10.0f);
+    Vector3 lightPos3(10.0f, 10.0f, 10.0f);
+    Vector3 lightPos4(10.0f, 10.0f, -10.0f);
+    
+    Vector3 lightCol1(10.0);
+    Vector3 lightCol2(10.0);
+    Vector3 lightCol3(10.0);
+    Vector3 lightCol4(10.0);
     
     while(!window.getWindowShouldClose()){
         if(window.getKey(GLFW_KEY_ESCAPE))
@@ -115,18 +90,25 @@ int main() {
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
-        shader.setMaterial(material);
-        model = glm::scale(model, Vector3(0.3f, 0.3f, 0.3f));
-        model = glm::rotate(glm::mat4(1.0f), (float)glfwGetTime() , glm::vec3(1.0f, 1.0f, 1.0f));
-        shader.setMat4f("model", model);
-        glBindVertexArray(mesh.id);
-        glDrawArrays(GL_TRIANGLES, 0, mesh.vertices);
+        shader.setVector3("lightPositions[0]", lightPos1);
+        shader.setVector3("lightPositions[1]", lightPos2);
+        shader.setVector3("lightPositions[2]", lightPos3);
+        shader.setVector3("lightPositions[3]", lightPos4);
         
-        shader.setMaterial(planeMaterial);
-        model = glm::scale(Matrix4f(1.0f), Vector3(20.0f, 1.0f, 20.0f));
-        shader.setMat4f("model", model);
+        shader.setVector3("lightColors[0]", lightCol1);
+        shader.setVector3("lightColors[1]", lightCol2);
+        shader.setVector3("lightColors[2]", lightCol3);
+        shader.setVector3("lightColors[3]", lightCol4);
+        
+        shader.setMat4f("model", glm::scale(Matrix4f(1.0f), Vector3(50.0f, 0.0f, 50.0f)));
         glBindVertexArray(plane.id);
-        glDrawArrays(GL_TRIANGLES, 0, plane.vertices);
+        glBindTexture(GL_TEXTURE_2D, planeTxt.id);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        
+        shader.setMat4f("model", glm::rotate(glm::translate(Matrix4f(1.0f), Vector3(0.0f, 5.0f, 0.0f)), (float)glfwGetTime() , glm::vec3(1.0f, 1.0f, 1.0f)));
+        glBindVertexArray(cube.id);
+        glBindTexture(GL_TEXTURE_2D, txt.id);
+        glDrawArrays(GL_TRIANGLES, 0, cube.vertices);
         
         glfwPollEvents();
         window.swapBuffers();

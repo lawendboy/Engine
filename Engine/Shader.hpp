@@ -4,9 +4,6 @@
 //
 
 #include "Material.hpp"
-#include "PointLight.hpp"
-#include "DirectionalLight.hpp"
-#include "SpotLight.hpp"
 
 #ifndef Shader_hpp
 #define Shader_hpp
@@ -23,10 +20,8 @@ public:
     void use();
     void setMat4f(std::string name, glm::mat4 mat);
     void setMaterial(Material &material);
-    void setPointLight(PointLight &light);
     void setVector3(std::string name, Vector3 &vec);
-    void setDirectionalLight(DirectionalLight &dirLight);
-    void setSpotLight(SpotLight &spotLight);
+    void setInt(std::string name, int value);
 };
 
 #endif /* Shader_hpp */

@@ -21,9 +21,9 @@ void Window::init() {
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
-    if(Window::WIDTH == 0)
+//    if(Window::WIDTH == 0)
         Window::WIDTH = 800;
-    if(Window::HEIGHT == 0)
+//    if(Window::HEIGHT == 0)
         Window::HEIGHT = 600;
     Window::window = glfwCreateWindow(Window::WIDTH, Window::HEIGHT, Window::title, NULL, NULL);
     if(window == NULL)
@@ -40,6 +40,10 @@ void Window::init() {
 #else
     glViewport(0, 0, Window::WIDTH, Window::HEIGHT);
 #endif
+    
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 glm::mat4 Window::getProjectionMatrix(){

@@ -16,7 +16,7 @@ public:
 
 class TextureManager {
 public:
-    static Texture createTexture(std::string filePath);
+    static Texture createTexture(std::string filePath, bool gammaCorrection);
 };
 
 #endif /* Texture_hpp */
