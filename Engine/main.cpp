@@ -26,14 +26,14 @@ int main() {
     window.FOV = 70;
     window.init();
 
-    Mesh plane = ObjectLoader::loadMesh("/Users/Michal/Desktop/Engine/Models/plane.obj");
-    Mesh cube = ObjectLoader::loadMesh("/Users/Michal/Desktop/Engine/Models/untitled.obj");
+    Mesh plane = ObjectLoader::loadMesh("/Users/ /Desktop/Engine/Models/plane.obj");
+    Mesh cube = ObjectLoader::loadMesh("/Users/ /Desktop/Engine/Models/untitled.obj");
     
-    Texture txt = TextureManager::createTexture("/Users/Michal/Desktop/Engine/Textures/test.jpeg", true);
-    Texture planeTxt = TextureManager::createTexture("/Users/Michal/Desktop/Engine/Textures/wood.jpg", true);
+    Texture txt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/test.jpeg", true);
+    Texture planeTxt = TextureManager::createTexture("/Users/ /Desktop/Engine/Textures/wood.jpg", true);
     
     Shader shader;
-    shader.create("/Users/Michal/Desktop/Engine/Shaders/vertex.glsl", "/Users/Michal/Desktop/Engine/Shaders/fragment.glsl");
+    shader.create("/Users/ /Desktop/Engine/Shaders/vertex.glsl", "/Users/ /Desktop/Engine/Shaders/fragment.glsl");
     
     shader.use();
     
